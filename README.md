@@ -15,7 +15,7 @@ Response:
 ```
 {
     "id": "6885e5dcd4d435f9b3a8609d",
-    "shortCode": "9fcZ9l",
+    "shortCode": "9fcZ9lx",
     "longUrl": "www.urlyouwanttoshorten.com",
     "createdAt": "2025-07-27T14:09:56.4941826",
     "updatedAt": "2025-07-27T14:09:56.4941826"
@@ -23,13 +23,13 @@ Response:
 ```
 ## 2. Retrieve Original URL:
 
-GET `/shorten/9fcZ9l`
+GET `/shorten/9fcZ9lx`
 
 Response:
 ```
 {
     "id": "6885e5dcd4d435f9b3a8609d",
-    "shortCode": "9fcZ9l",
+    "shortCode": "9fcZ9lx",
     "longUrl": "www.urlyouwanttoshorten.com",
     "createdAt": "2025-07-27T14:09:56.494",
     "updatedAt": "2025-07-27T14:09:56.494"
@@ -37,7 +37,7 @@ Response:
 ```
 ## 3. Update Short URL:
 
-PUT `/shorten/9fcZ9l`
+PUT `/shorten/9fcZ9lx`
 ```
 {
     "url": "www.thisisanupdatedurl.com"
@@ -47,7 +47,7 @@ Response:
 ```
 {
     "id": "6885e5dcd4d435f9b3a8609d",
-    "shortCode": "9fcZ9l",
+    "shortCode": "9fcZ9lx",
     "longUrl": "www.thisisanupdatedurl.com",
     "createdAt": "2025-07-27T14:09:56.494",
     "updatedAt": "2025-07-27T14:21:53.7322957"
@@ -56,20 +56,20 @@ Response:
 
 ## 4. Delete Short URL:
 
-DELETE `/shorten/9fcZ9l`
+DELETE `/shorten/9fcZ9lx`
 
 Response:
 `204 No Content`
 
 ## 5. Get URL Statistics:
 
-GET `/shorten/NuoDrN/stats`
+GET `/shorten/NuoDrN1f/stats`
 
 Response:
 ```
 {
     "id": "68851ae7d4d435f9b3a8609b",
-    "shortCode": "NuoDrN",
+    "shortCode": "NuoDrNf",
     "longUrl": "https://www.reddit.com/",
     "accessCount": 3
     "createdAt": "2025-07-26T23:43:59.532",
