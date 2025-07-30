@@ -26,7 +26,6 @@ public class ShortUrlEntity {
     private String longUrl;
     @NonNull
     private Long accessCount = 0L;
-    @CreatedDate
     @NonNull
     private LocalDateTime createdAt;
     @NonNull
@@ -35,5 +34,7 @@ public class ShortUrlEntity {
     public ShortUrlEntity(@NonNull String shortCode, @NonNull String longUrl) {
         this.shortCode = shortCode;
         this.longUrl = longUrl;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = this.createdAt;
     }
 }

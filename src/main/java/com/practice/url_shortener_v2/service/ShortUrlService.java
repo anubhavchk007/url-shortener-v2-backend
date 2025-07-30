@@ -10,6 +10,7 @@ import com.practice.url_shortener_v2.exception.NotFoundException;
 import com.practice.url_shortener_v2.repository.ShortUrlRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.time.LocalDateTime;
 
@@ -64,5 +65,15 @@ public class ShortUrlService {
         return shortUrlRepository.findByShortCode(shortCode)
                 .map(ShortUrlStatsResponse::new)
                 .orElseThrow(() -> new NotFoundException("Short URL not found."));
+    }
+
+    public RedirectView redirectUrl(String shortCode) {
+        ShortUrlEntity shortUrl = shortUrlRepository.findByShortCode(shortCode)
+                .orElseThrow(() -> new NotFoundException("Short URL was not found."));
+        String longUrl = shortUrl.getLongUrl();
+        if (!longUrl.startsWith("http")) {
+            longUrl = "https://" + longUrl;
+        }
+        return new RedirectView(longUrl);
     }
 }

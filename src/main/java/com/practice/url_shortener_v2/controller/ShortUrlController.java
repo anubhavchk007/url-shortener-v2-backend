@@ -7,6 +7,7 @@ import com.practice.url_shortener_v2.service.ShortUrlService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class ShortUrlController {
@@ -26,6 +27,11 @@ public class ShortUrlController {
     @GetMapping("shorten/{shortCode}")
     public ShortUrlResponse retrieveUrl(@PathVariable String shortCode) {
         return shortUrlService.retrieveUrl(shortCode);
+    }
+
+    @GetMapping("shorten/redirect/{shortCode}")
+    public RedirectView redirectUrl(@PathVariable String shortCode) {
+        return shortUrlService.redirectUrl(shortCode);
     }
 
     @ResponseStatus(HttpStatus.OK)
